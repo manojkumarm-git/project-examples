@@ -28,6 +28,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <distributionManagement>
+       <repository>
+          <id>central</id>
+          <name>HTS2-releases</name>
+          <url>https://hts2.jfrog.io/artifactory/mk-libs-snapshot</url>
+       </repository>
+       <snapshotRepository>
+          <id>snapshots</id>
+          <name>HTS2-snapshots</name>
+          <url>https://hts2.jfrog.io/artifactory/mk-libs-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <pluginManagement>
