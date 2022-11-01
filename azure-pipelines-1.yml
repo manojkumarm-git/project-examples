@@ -28,24 +28,3 @@ steps:
     targetType: 'inline'
     script: 'echo $JFROG_CLI_BUILD_NUMBER'
     
-- task: JFrogMaven@1
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean deploy'
-    artifactoryResolverService: 'mk-jfrog-artifactory-hts'
-    targetResolveReleaseRepo: 'mk-libs-release'
-    targetResolveSnapshotRepo: 'mk-libs-snapshot'
-    artifactoryDeployService: 'mk-jfrog-artifactory-hts'
-    targetDeployReleaseRepo: 'mk-libs-release'
-    targetDeploySnapshotRepo: 'mk-libs-snapshot'
-    collectBuildInfo: true
-    buildName: '$(Build.DefinitionName)'
-    buildNumber: '$(Build.BuildNumber)'
-    includeEnvVars: true
-    
-- task: JFrogToolsInstaller@1
-  inputs:
-    artifactoryConnection: 'mk-jfrog-artifactory-hts'
-    cliInstallationRepo: 'jf-cli-remote'
-    installExtractors: true
-    extractorsInstallationRepo: 'jfrog-extractors-remote'
