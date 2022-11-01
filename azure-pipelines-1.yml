@@ -12,8 +12,8 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: 'maven-examples/maven-example/pom.xml'
-    goals: 'clean deploy'
+    mavenPomFile: '../maven-examples/maven-example/pom.xml'
+    goals: 'clean deploy -DartifactoryDeploy -Dartifactory.username=$(ARTIFACTORY_USERNAME) -Dartifactory.password=$(ARTIFACTORY_PASSWORD)'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
