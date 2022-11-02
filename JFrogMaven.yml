@@ -12,7 +12,7 @@ pool:
 steps:
 - task: JFrogMaven@1
   inputs:
-    mavenPomFile: 'project-examples/maven-examples/maven-example/pom.xml'
+    mavenPomFile: '../project-examples/maven-examples/maven-example/pom.xml'
     goals: 'deploy'
     artifactoryResolverService: 'mk-jfrog-artifactory-hts'
     targetResolveReleaseRepo: 'mk-libs-release'
