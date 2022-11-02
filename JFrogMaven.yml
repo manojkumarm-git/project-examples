@@ -29,3 +29,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'echo $JFROG_CLI_BUILD_NUMBER'
+    
+- task: JFrogPublishBuildInfo@1
+  inputs:
+    artifactoryConnection: 'mk-jfrog-artifactory-hts'
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
