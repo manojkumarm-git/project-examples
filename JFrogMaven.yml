@@ -16,7 +16,7 @@ steps:
     script: 'echo $(System.DefaultWorkingDirectory)'
 - task: JFrogMaven@1
   inputs:
-    mavenPomFile: '$(System.DefaultWorkingDirectory)/project-examples/maven-examples/maven-example/pom.xml'
+    mavenPomFile: '$(System.DefaultWorkingDirectory)/mk-project/project-examples/maven-examples/maven-example/pom.xml'
     goals: 'deploy'
     artifactoryResolverService: 'mk-jfrog-artifactory-hts'
     targetResolveReleaseRepo: 'mk-libs-release'
