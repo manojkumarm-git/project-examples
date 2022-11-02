@@ -32,7 +32,7 @@
        <repository>
           <id>central</id>
           <name>HTS2-releases</name>
-          <url>https://hts2.jfrog.io/artifactory/mk-libs-snapshot</url>
+          <url>https://hts2.jfrog.io/artifactory/mk-libs-release</url>
        </repository>
        <snapshotRepository>
           <id>snapshots</id>
