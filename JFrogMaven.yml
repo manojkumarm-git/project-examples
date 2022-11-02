@@ -10,10 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'echo $(System.DefaultWorkingDirectory)'
+
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
@@ -27,3 +24,8 @@ steps:
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'echo $JFROG_CLI_BUILD_NUMBER'
