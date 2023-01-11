@@ -36,7 +36,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'echo "my environment variable is $SAUCE"'
+    script: echo "my environment variable is $SAUCE"
 
 
     
