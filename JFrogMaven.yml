@@ -36,4 +36,4 @@ steps:
     artifactoryConnection: 'clouddsein'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
-    projectKey: 'xrayreport'
+    projectKey: 'vuln'
