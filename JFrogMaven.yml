@@ -15,30 +15,16 @@ steps:
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
     goals: 'deploy'
-    artifactoryResolverService: 'mk-jfrog-artifactory-hts'
-    targetResolveReleaseRepo: 'mk-libs-release'
-    targetResolveSnapshotRepo: 'mk-libs-snapshot'
-    artifactoryDeployService: 'mk-jfrog-artifactory-hts'
-    targetDeployReleaseRepo: 'mk-libs-release'
-    targetDeploySnapshotRepo: 'mk-libs-snapshot'
+    artifactoryResolverService: 'clouddsein'
+    targetResolveReleaseRepo: 'mk-mvn-libs-release'
+    targetResolveSnapshotRepo: 'mk-mvn-libs-snapshot'
+    artifactoryDeployService: 'clouddsein'
+    targetDeployReleaseRepo: 'mk-mvn-libs-release'
+    targetDeploySnapshotRepo: 'mk-mvn-libs-snapshot'
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     
-
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'echo "##vso[task.setvariable variable=sauce]crushed tomatoes"'
-
-# An environment variable called `SAUCE` has been added to all downstream steps
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: echo 'my environment variable is $SAUCE'
-
-
     
 - task: Bash@3
   inputs:
@@ -46,7 +32,8 @@ steps:
     script: 'env | sort'
     
 - task: JFrogPublishBuildInfo@1
+- task: JFrogPublishBuildInfo@1
   inputs:
-    artifactoryConnection: 'mk-jfrog-artifactory-hts'
+    artifactoryConnection: 'clouddsein'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
