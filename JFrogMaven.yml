@@ -32,8 +32,8 @@ steps:
     script: 'env | sort'
     
 - task: JFrogPublishBuildInfo@1
-- task: JFrogPublishBuildInfo@1
   inputs:
     artifactoryConnection: 'clouddsein'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    projectKey: 'xrayreport'
