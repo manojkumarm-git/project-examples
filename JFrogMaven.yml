@@ -24,6 +24,8 @@ steps:
     collectBuildInfo: true
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
+    projectKey: 'vuln'
+    includeEnvVars: true
     
     
 - task: Bash@3
@@ -38,11 +40,4 @@ steps:
     buildNumber: '$(Build.BuildNumber)'
     projectKey: 'vuln'
 
-- task: JFrogDiscardBuilds@1
-  inputs:
-    artifactoryConnection: 'clouddsein'
-    buildName: '$(Build.DefinitionName)'
-    projectKey: 'vuln'
-    maxDays: '30'
-    maxBuilds: '3'
-    deleteArtifacts: true
+
