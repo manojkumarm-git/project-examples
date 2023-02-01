@@ -15,10 +15,10 @@ steps:
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
     goals: 'deploy'
-    artifactoryResolverService: 'clouddse1'
+    artifactoryResolverService: 'clouddsein'
     targetResolveReleaseRepo: 'mk-mvn-libs-release'
     targetResolveSnapshotRepo: 'mk-mvn-libs-snapshot'
-    artifactoryDeployService: 'clouddse1'
+    artifactoryDeployService: 'clouddsein'
     targetDeployReleaseRepo: 'mk-mvn-libs-release'
     targetDeploySnapshotRepo: 'mk-mvn-libs-snapshot'
     collectBuildInfo: true
@@ -35,7 +35,7 @@ steps:
     
 - task: JFrogPublishBuildInfo@1
   inputs:
-    artifactoryConnection: 'clouddse1'
+    artifactoryConnection: 'clouddsein'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     projectKey: 'vuln'
