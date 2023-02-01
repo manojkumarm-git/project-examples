@@ -11,6 +11,10 @@ pool:
 
 steps:
 
+- task: JfrogCliV2@1
+  inputs:
+    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    command: 'jf <COMMAND>'
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
