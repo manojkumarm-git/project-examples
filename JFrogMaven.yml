@@ -10,7 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
+- task: JFrogToolsInstaller@1
+  inputs:
+    artifactoryConnection: 'clouddsein'
+    cliInstallationRepo: 'jf-remote'
+    installCustomVersion: true
+    cliVersion: '2.34.0'
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
