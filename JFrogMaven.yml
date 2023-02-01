@@ -12,17 +12,17 @@ pool:
 steps:
 - task: JFrogToolsInstaller@1
   inputs:
-    artifactoryConnection: 'clouddsein'
+    artifactoryConnection: 'clouddse1'
     cliInstallationRepo: 'jf-remote'
 
 - task: JFrogMaven@1
   inputs:
     mavenPomFile: 'maven-examples/maven-example/pom.xml'
     goals: 'deploy'
-    artifactoryResolverService: 'clouddsein'
+    artifactoryResolverService: 'clouddse1'
     targetResolveReleaseRepo: 'mk-mvn-libs-release'
     targetResolveSnapshotRepo: 'mk-mvn-libs-snapshot'
-    artifactoryDeployService: 'clouddsein'
+    artifactoryDeployService: 'clouddse1'
     targetDeployReleaseRepo: 'mk-mvn-libs-release'
     targetDeploySnapshotRepo: 'mk-mvn-libs-snapshot'
     collectBuildInfo: true
@@ -39,7 +39,7 @@ steps:
     
 - task: JFrogPublishBuildInfo@1
   inputs:
-    artifactoryConnection: 'clouddsein'
+    artifactoryConnection: 'clouddse1'
     buildName: '$(Build.DefinitionName)'
     buildNumber: '$(Build.BuildNumber)'
     projectKey: 'vuln'
