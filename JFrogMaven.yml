@@ -10,10 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: JFrogToolsInstaller@1
-  inputs:
-    artifactoryConnection: 'clouddse1'
-    cliInstallationRepo: 'jf-remote'
 
 - task: JFrogMaven@1
   inputs:
