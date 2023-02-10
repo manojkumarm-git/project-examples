@@ -27,18 +27,24 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>20.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <distributionManagement>
-       <repository>
-          <id>central</id>
-          <name>HTS2-releases</name>
-          <url>https://hts2.jfrog.io/artifactory/mk-libs-release</url>
-       </repository>
-       <snapshotRepository>
-          <id>snapshots</id>
-          <name>HTS2-snapshots</name>
-          <url>https://hts2.jfrog.io/artifactory/mk-libs-snapshot</url>
-        </snapshotRepository>
+    <repository>
+        <id>central</id>
+        <name>clouddsein-artifactory-primary-1-releases</name>
+        <url>https://clouddsein.jfrog.io/artifactory/mk-mvn-libs-snapshot-local</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>clouddsein-artifactory-primary-1-snapshots</name>
+        <url>https://clouddsein.jfrog.io/artifactory/mk-mvn-libs-snapshot-local</url>
+    </snapshotRepository>
     </distributionManagement>
 
     <build>
