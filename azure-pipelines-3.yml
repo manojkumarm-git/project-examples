@@ -10,5 +10,14 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
+- task: JFrogDocker@1
+  inputs:
+    command: 'Pull'
+    artifactoryConnection: 'sandeepmkp'
+    imageName: 'sandeepmkp.jfrog.io/mk-docker/node:16-alpine3.17'
+    collectBuildInfo: true
+    buildName: 'dockertestbuild'
+    buildNumber: 'docker'
+    module: 'node-16-alpine3.17'
+    skipLogin: false
 
