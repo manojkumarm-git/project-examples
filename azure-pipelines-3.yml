@@ -19,5 +19,5 @@ steps:
     buildName: 'dockertestbuild'
     buildNumber: '1'
     module: 'node-16-alpine3.17'
-    skipLogin: false
+    skipLogin: true
 
