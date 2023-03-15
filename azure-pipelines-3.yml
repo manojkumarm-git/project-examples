@@ -17,16 +17,7 @@ steps:
     imageName: 'sandeepmkp.jfrog.io/mk-docker/node:16-alpine3.17'
     collectBuildInfo: true
     buildName: 'dockertestbuild'
-    buildNumber: 'docker'
+    buildNumber: '1'
     module: 'node-16-alpine3.17'
     skipLogin: false
 
-- task: JfrogCliV2@1
-  inputs:
-    jfrogPlatformConnection: 'sandeepmkp-platform'
-    command: |
-      jf c add "dockertest" --artifactory-url="https://sandeepmkp.jfrog.io/artifactory" --interactive=false --user='manoj' --password=Password1* --basic-auth-only
-      
-      jf c use "dockertest"
-      
-      jf docker pull "sandeepmkp.jfrog.io/mk-docker/node:16-alpine3.17" --build-name="dockertestbuild" --build-number="docker" --module="node-16-alpine3.17" --server-id="dockertest"
