@@ -21,5 +21,5 @@ steps:
   inputs:
     jfrogPlatformConnection: 'hts2-platform'
     command: |
+      jf rt ping
       jf npmc --repo-resolve npmjs-remote
-      jf npm install -g @angular/cli
