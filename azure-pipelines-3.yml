@@ -21,9 +21,11 @@ steps:
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     command: |
-      jf c add art --url=https://hts2.jfrog.io/ --access-token=cmVmdGtuOjAxOjE3MTQ1NTE0Nzk6VVBHUTBnWlpiYUFoeWQ5eVZoZDNIU0pvMERD --interactive=false
+      jf c add "art" --url=https://hts2.jfrog.io/ --access-token=cmVmdGtuOjAxOjE3MTQ1NTE0Nzk6VVBHUTBnWlpiYUFoeWQ5eVZoZDNIU0pvMERD --user=manoj --interactive=false --basic-auth-only=false
       
       jf config use art
+      
+      jf rt ping --server-id art
       
       jf npmc --server-id-resolve=art --repo-resolve='npmjs-remote'
       
