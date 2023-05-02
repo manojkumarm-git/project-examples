@@ -17,3 +17,14 @@ steps:
     installCustomVersion: true
     cliVersion: '2.36.1'
 
+- task: JfrogCliV2@1
+  inputs:
+    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    command: |
+      jf c add art --url=https://hts2.jfrog.io/ --access-token=cmVmdGtuOjAxOjE3MTQ1NTE0Nzk6VVBHUTBnWlpiYUFoeWQ5eVZoZDNIU0pvMERD --interactive=false
+      
+      jf config use art
+      
+      jf npmc --server-id-resolve=art --repo-resolve='npmjs-remote'
+      
+      jf npm install tar
