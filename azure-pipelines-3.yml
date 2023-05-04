@@ -17,10 +17,9 @@ steps:
     installCustomVersion: true
     cliVersion: '2.36.1'
 
-- task: JfrogCliV2@1
+- task: CmdLine@2
   inputs:
-    jfrogPlatformConnection: 'hts2-platform'
-    command: 'jf rt ping'
+    script: 'echo  $(--server-id)'
 
 - task: JfrogCliV2@1
   inputs:
