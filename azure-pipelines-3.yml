@@ -23,9 +23,28 @@ steps:
     cliVersion: '2.36.1'
     command: |
       jf rt ping
+- task: JfrogCliV2@1
+  inputs:
+    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    useCustomVersion: true
+    cliVersion: '2.36.1'
+    command: |
       jf c show
+- task: JfrogCliV2@1
+  inputs:
+    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    useCustomVersion: true
+    cliVersion: '2.36.1'
+    command: |
       jf npm-config --repo-resolve=npmjs-remote
+- task: JfrogCliV2@1
+  inputs:
+    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    useCustomVersion: true
+    cliVersion: '2.36.1'
+    command: |
       jf npm install --build-name=test --build-number=1
+
 
 
 
