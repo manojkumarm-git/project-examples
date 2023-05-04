@@ -20,8 +20,8 @@ steps:
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     command: |
-      /opt/hostedtoolcache/jf/2.36.1/x64/jf npm-config --repo-resolve=npmjs-remote 
-      jf npm install --build-name=test --build-number=1
+      'jf npm-config --repo-resolve=npmjs-remote'
+      'jf npm install --build-name=test --build-number=1'
 
 
 
