@@ -19,9 +19,14 @@ steps:
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    useCustomVersion: true
+    cliVersion: '2.36.1'
     command: |
-      'jf npm-config --repo-resolve=npmjs-remote'
-      'jf npm install --build-name=test --build-number=1'
+      jf rt ping
+      jf c show
+      jf npm-config --repo-resolve=npmjs-remote
+      jf npm install --build-name=test --build-number=1
+    workingDirectory: '''$(System.DefaultWorkingDirectory)'''
 
 
 
