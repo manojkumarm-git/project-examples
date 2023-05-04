@@ -21,6 +21,8 @@ steps:
        jf npm install --build-name=test --build-number=1
 
 
-
+- task: CmdLine@2
+  inputs:
+    script: 'echo $PATH'
 
 
