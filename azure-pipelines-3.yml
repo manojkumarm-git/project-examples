@@ -16,7 +16,6 @@ steps:
     command: 'install'
     artifactoryConnection: 'mk-jfrog-artifactory-hts'
     sourceRepo: 'npmjs-remote'
-    arguments: '--verbose'
     collectBuildInfo: true
     threads: '1'
     buildName: 'testnpm'
