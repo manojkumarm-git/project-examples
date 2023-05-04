@@ -20,6 +20,5 @@ steps:
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'hts2-platform'
-    command: |
-      jf rt ping
-      jf npmc --repo-resolve npmjs-remote
+    command: 'jf rt ping'
+
