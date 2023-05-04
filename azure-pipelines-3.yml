@@ -23,7 +23,7 @@ steps:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     command: |
       jf npm-config --repo-resolve=npmjs-remote 
-      jf npm install tar --build-name=test --build-number=1
+      jf npm install --build-name=test --build-number=1
 
 
 
