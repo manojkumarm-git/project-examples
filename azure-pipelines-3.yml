@@ -19,7 +19,7 @@ steps:
     command: 'jf rt ping'
 - task: CmdLine@2
   inputs:
-    script: 'echo ''$serverId'''
+    script: 'echo $serverId'
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
