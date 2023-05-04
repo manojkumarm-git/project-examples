@@ -17,12 +17,7 @@ steps:
     useCustomVersion: true
     cliVersion: '2.36.1'
     command: 'jf rt ping'
-- task: JfrogCliV2@1
-  inputs:
-    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
-    useCustomVersion: true
-    cliVersion: '2.36.1'
-    command: 'jf config show'
+
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
