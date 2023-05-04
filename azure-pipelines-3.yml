@@ -16,8 +16,6 @@ steps:
     cliInstallationRepo: 'jf-cli-remote'
     installCustomVersion: true
     cliVersion: '2.36.1'
-
-
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
