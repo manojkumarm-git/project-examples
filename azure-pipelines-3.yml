@@ -11,15 +11,14 @@ pool:
 
 steps:
 
-- task: JFrogNpm@1
+- task: JfrogCliV2@1
   inputs:
-    command: 'install'
-    artifactoryConnection: 'mk-jfrog-artifactory-hts'
-    sourceRepo: 'npmjs-remote'
-    collectBuildInfo: true
-    threads: '1'
-    buildName: 'testnpm'
-    buildNumber: '1'
+    jfrogPlatformConnection: 'mk-jfrog-platform-hts'
+    useCustomVersion: true
+    cliVersion: '2.36.1'
+    command: |
+      jf npm-config --repo-resolve npmjs-remote 
+       jf npm install --build-name=test --build-number=1
 
 
 
