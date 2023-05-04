@@ -17,21 +17,19 @@ steps:
     useCustomVersion: true
     cliVersion: '2.36.1'
     command: 'jf rt ping'
-- task: CmdLine@2
-  inputs:
-    script: 'echo $(serverId)'
+
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     useCustomVersion: true
     cliVersion: '2.36.1'
-    command: 'jf npm-config --repo-resolve=npmjs-remote'
+    command: 'jf npm-config --repo-resolve=npmjs-remote --server-id-resolve=$(serverId)'
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     useCustomVersion: true
     cliVersion: '2.36.1'
-    command: 'jf npm install --build-name=test --build-number=1'
+    command: 'jf npm install --build-name=test --build-number=1 --server-id=$(serverId)'
 
 
 
