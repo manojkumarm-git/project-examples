@@ -13,7 +13,9 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'echo $PATH'
+    script: |
+      echo $PATH
+      echo '##vso[task.setvariable variable=path]$(PATH):/opt/hostedtoolcache/jf/2.36.1/x64/'
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
