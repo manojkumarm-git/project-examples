@@ -10,40 +10,31 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: JFrogToolsInstaller@1
-  inputs:
-    artifactoryConnection: 'mk-jfrog-artifactory-hts'
-    cliInstallationRepo: 'jf-cli-remote'
-    installCustomVersion: true
-    cliVersion: '2.36.1'
+
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     useCustomVersion: true
     cliVersion: '2.36.1'
-    command: |
-      jf rt ping
+    command: 'jf rt ping'
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     useCustomVersion: true
     cliVersion: '2.36.1'
-    command: |
-      jf c show
+    command: 'jf config show'
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     useCustomVersion: true
     cliVersion: '2.36.1'
-    command: |
-      jf npm-config --repo-resolve=npmjs-remote
+    command: 'jf npm-config --repo-resolve=npmjs-remote'
 - task: JfrogCliV2@1
   inputs:
     jfrogPlatformConnection: 'mk-jfrog-platform-hts'
     useCustomVersion: true
     cliVersion: '2.36.1'
-    command: |
-      jf npm install --build-name=test --build-number=1
+    command: 'jf npm install --build-name=test --build-number=1'
 
 
 
