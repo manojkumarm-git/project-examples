@@ -14,7 +14,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      export PATH=$PATH:/opt/hostedtoolcache/jf/2.36.1/x64/jf'
+      export PATH=$PATH:/opt/hostedtoolcache/jf/2.36.1/x64/jf
       echo $PATH
       cat ~/.bashrc
 - task: JfrogCliV2@1
