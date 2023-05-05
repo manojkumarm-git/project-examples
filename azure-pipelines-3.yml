@@ -15,7 +15,7 @@ steps:
   inputs:
     script: |
       echo '##vso[task.prependpath]/opt/hostedtoolcache/jf/2.36.1/x64/'
-      echo $PATH
+      echo "$PATH"
       
 - task: JfrogCliV2@1
   inputs:
